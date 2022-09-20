@@ -2,6 +2,7 @@ package com.azhu.main;
 
 
 import com.azhu.utils.GetFileNameUtils;
+import com.azhu.utils.HammingUtils;
 import com.azhu.utils.ReadFileUtils;
 import com.azhu.utils.SimHashUtils;
 
@@ -37,7 +38,13 @@ public class MainPaperCheck {
         String simHashCopy = SimHashUtils.getSimHash(Copyfile);
         System.out.println("正在计算"+ GetFileNameUtils.getName(args[1])+"的simHash值");
 
-
+        // 由 simHash值求出相似度
+        double similarity = HammingUtils.getSimilarity(simHashSourse, simHashCopy);
+        // 把相似度写入最后的结果文件中
+        ReadFileUtils.writeTxt(similarity, resultFileName,args[0],args[1]);
+        //输出结果
+        System.out.print("输出结果：");
+        System.out.println(ReadFileUtils.readTxt(args[2]));
         System.out.print("输出结果：");
         System.out.println(ReadFileUtils.readTxt(args[2]));
         //退出程序
