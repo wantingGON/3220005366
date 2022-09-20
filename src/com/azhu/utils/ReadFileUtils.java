@@ -44,12 +44,12 @@ public class ReadFileUtils {
     public static void writeTxt(double txtElem, String txtPath, String sourcefile, String copy) {
         String str = Double.toString(txtElem);
         File file = new File(txtPath);
+        //用utils打包读取文件名的方法
+       // File sourceFile = new File(sourcefile.trim());
+        String sourceName =GetFileNameUtils.getName(sourcefile);
 
-        File sourceFile = new File(sourcefile.trim());
-        String sourceName = sourceFile.getName();
-
-        File CopyFile = new File(copy.trim());
-        String CopyName = CopyFile.getName();
+        //File CopyFile = new File(copy.trim());
+        String CopyName = GetFileNameUtils.getName(copy);
 
         FileWriter fileWriter = null;
         try {

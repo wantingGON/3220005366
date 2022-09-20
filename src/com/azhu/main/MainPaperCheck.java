@@ -1,7 +1,9 @@
 package com.azhu.main;
 
 
+import com.azhu.utils.GetFileNameUtils;
 import com.azhu.utils.ReadFileUtils;
+import com.azhu.utils.SimHashUtils;
 
 import java.util.Scanner;
 
@@ -28,6 +30,12 @@ public class MainPaperCheck {
         String Copyfile = ReadFileUtils.readTxt(args[1]);
         String resultFileName =args[2];
         System.out.println("读取文件中... ...");
+
+        // 由字符串得出对应的 simHash值
+        String simHashSourse = SimHashUtils.getSimHash(Sourcefile);
+        System.out.println("正在计算"+ GetFileNameUtils.getName(args[0])+"的simHash值");
+        String simHashCopy = SimHashUtils.getSimHash(Copyfile);
+        System.out.println("正在计算"+ GetFileNameUtils.getName(args[1])+"的simHash值");
 
 
         System.out.print("输出结果：");
