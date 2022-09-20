@@ -41,19 +41,27 @@ public class ReadFileUtils {
      * 传入内容、文件全路径名，将内容写入文件并换行
      * txtElem 传入的内容  txtPath 写入的文件路径
      */
-    public static void writeTxt(double txtElem,String txtPath){
+    public static void writeTxt(double txtElem, String txtPath, String sourcefile, String copy) {
         String str = Double.toString(txtElem);
         File file = new File(txtPath);
-        FileWriter fileWriter;
+
+        File sourceFile = new File(sourcefile.trim());
+        String sourceName = sourceFile.getName();
+
+        File CopyFile = new File(copy.trim());
+        String CopyName = CopyFile.getName();
+
+        FileWriter fileWriter = null;
         try {
             fileWriter = new FileWriter(file, true);
+            fileWriter.write(sourceName + "和" + CopyName + "的重复率是");
             fileWriter.write(str, 0, (str.length() > 3 ? 4 : str.length()));
             fileWriter.write("\r\n");
+
             // 关闭资源
             fileWriter.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-
 }
