@@ -1,1 +1,2 @@
 
+orig.txt和orig_0.8_add.txt的重复率是0.82

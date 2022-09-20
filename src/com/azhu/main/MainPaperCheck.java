@@ -45,8 +45,6 @@ public class MainPaperCheck {
         //输出结果
         System.out.print("输出结果：");
         System.out.println(ReadFileUtils.readTxt(args[2]));
-        System.out.print("输出结果：");
-        System.out.println(ReadFileUtils.readTxt(args[2]));
         //退出程序
         System.exit(0);
     }
