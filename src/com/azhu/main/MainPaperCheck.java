@@ -6,8 +6,6 @@ import com.azhu.utils.HammingUtils;
 import com.azhu.utils.ReadFileUtils;
 import com.azhu.utils.SimHashUtils;
 
-import java.util.Scanner;
-
 public class MainPaperCheck {
 
     public static void main(String[] args) {
